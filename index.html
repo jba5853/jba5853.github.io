@@ -98,6 +98,16 @@
     @media (max-width:520px){
       h1{font-size:26px} .avatar{width:52px;height:52px}
     }
+
+    .plain-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.plain-link:hover {
+  color: var(--accent);
+}
   </style>
 </head>
 <body>
@@ -117,15 +127,9 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 16l-4-4h3V4h2v8h3l-4 4zM5 20h14v-2H5v2z"/></svg>
           <span>Resume</span>
         </a>
-        <a class="btn" href="mailto:youremail@psu.edu">Contact</a>
+        <a class="btn" href="mailto:jba5853@psu.edu">Contact</a>
       </div>
     </header>
-
-    <div class="info">
-      <div class="chip">Python • JS/TS • Streamlit • MATLAB • Java</div>
-      <div class="chip">Time Series • Optimization • Data Viz</div>
-      <div class="chip">UI/UX • Storytelling</div>
-    </div>
 
     <!-- Projects -->
     <h2>Selected Projects</h2>
@@ -139,16 +143,8 @@
       </div>
 
       <div class="card">
-        <h3>SignSidecar (Zoom Sign-Language Helper)</h3>
-        <p>Prototype hand/finger detection extension designed to support sign communication in video calls (work in progress).</p>
-        <div class="links">
-          <a href="https://github.com/jba5853/SignSidecar">GitHub</a>
-        </div>
-      </div>
-
-      <div class="card">
         <h3>SP500 Stock Price Prediction</h3>
-        <p>Time-series forecasting on the S&P 500 index using Streamlit interface to explore models and prediction horizons visually.</p>
+        <p>Time-series forecasting on the S&P 500 index using a Streamlit interface to explore models and prediction horizons visually.</p>
         <div class="links">
           <a href="https://github.com/jba5853/sp500-prediction">GitHub</a>
         </div>
@@ -159,12 +155,21 @@
     <h2>Research</h2>
     <div class="grid">
       <div class="card">
+        <h3>SignSidecar (Zoom Sign-Language Helper)</h3>
+        <p>Research-driven prototype exploring computer vision and accessibility in human-computer interaction. Designed to detect and translate hand/finger gestures for sign communication during live video calls, with a focus on improving detection accuracy and real-time performance.</p>
+        <div class="links">
+          <a href="https://github.com/jba5853/SignSidecar">GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
         <h3>Fund Selection via ML Ranking (in progress)</h3>
         <p>Developing a supervised ranking model to identify top-performing investment funds based on historical risk and return data. Designed for Penn State’s Investments Office pipeline.</p>
       </div>
+
       <div class="card">
         <h3>3D Imaging for Livestock Weight Estimation (in progress)</h3>
-        <p>Research with Penn State’s Institute for Computational & Data Sciences using 3D imaging to estimate calf body weights non-invasively, combining camera-based depth cues with annotated data to evaluate prediction accuracy against ground-truth scales.</p>
+        <p>Research with Penn State’s Institute for Computational & Data Sciences and under the Department of Animal Sciences under the mentorship of Dr. Enrico Casella(casella@psu.edu). Using 3D imaging and Meta Smart glasses to estimate calf body weights, combining camera-based depth cues with annotated data to evaluate prediction accuracy against ground-truth scales.</p>
       </div>
     </div>
 
@@ -173,7 +178,7 @@
     <div class="grid">
       <div class="card">
         <h3>Land & Legacy: Rockspring’s Farming Families</h3>
-        <p>Interactive ArcGIS StoryMap created for the Pasto Agricultural Museum documenting the history of non-Penn State-owned farms in the Rockspring area. Highlights generational land ownership, transitions, and family narratives shaping the region’s agricultural legacy.</p>
+        <p>Interactive ArcGIS StoryMap created for the Pasto Agricultural Museum at Penn State, documenting the history of farms in the Rockspring area. Highlights generational land ownership, transitions, and family narratives shaping the region’s agricultural legacy. This project is ongoing based on historical findings.</p>
         <div class="links">
           <a href="https://storymaps.arcgis.com/stories/3b5f5bdfb2c64b239ebc2f1f52f32f7a" target="_blank">View StoryMap</a>
         </div>
@@ -185,19 +190,14 @@
     <div class="grid">
       <div class="card">
         <h3>Profiles</h3>
-        <p><a href="https://github.com/jba5853">GitHub: jba5853</a></p>
-        <p><a href="https://www.linkedin.com/in/jba5853/">LinkedIn</a></p>
+        <p><a class="plain-link" href="https://www.linkedin.com/in/arorajia/" target="_blank">LinkedIn</a></p>
       </div>
       <div class="card">
         <h3>Get in touch</h3>
-        <p><a href="mailto:youremail@psu.edu">youremail@psu.edu</a></p>
+        <p><a class="plain-link" href="mailto:youremail@psu.edu">jba5853@psu.edu</a></p>
       </div>
     </div>
 
-    <footer>
-      <p>© <span id="y"></span> Jia Arora • Built with GitHub Pages</p>
-    </footer>
-  </div>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
