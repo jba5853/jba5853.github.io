@@ -5,6 +5,7 @@
   <title>Jia Arora — Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio and resume of Jia Arora, Computer Science at Penn State." />
+
   <style>
     :root{
       --bg1:#0b0f1a; --bg2:#0a1226;
@@ -13,8 +14,10 @@
       --text:#e5e7eb; --muted:#9aa7bd; --accent:#7dd3fc;
       --radius:18px; --shadow:0 18px 60px rgba(0,0,0,.45); --max:1120px;
     }
+
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
+
     body{
       color:var(--text);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -23,93 +26,131 @@
         radial-gradient(1200px 800px at 85% -10%, rgba(109,40,217,.20), transparent 60%),
         radial-gradient(1000px 800px at 10% 0%, rgba(34,197,242,.18), transparent 55%),
         linear-gradient(120deg, var(--bg1), var(--bg2));
-      min-height:100dvh; overflow-x:hidden;
+      min-height:100dvh;
+      overflow-x:hidden;
     }
 
-    .halo{position:fixed; inset:-20vmax;
-      background: conic-gradient(from 0deg,
+    .halo{
+      position:fixed; inset:-20vmax;
+      background: conic-gradient(
         rgba(125,211,252,.15),
         rgba(167,139,250,.20),
         rgba(34,211,238,.12),
-        rgba(125,211,252,.15));
-      filter: blur(120px); animation: spin 22s linear infinite;
-      opacity:.55; pointer-events:none; z-index:-1;}
-    @keyframes spin { to{ transform: rotate(360deg) } }
+        rgba(125,211,252,.15)
+      );
+      filter: blur(120px);
+      animation: spin 22s linear infinite;
+      opacity:.55;
+      pointer-events:none;
+      z-index:-1;
+    }
 
-    .wrap{max-width:var(--max); margin:56px auto; padding:0 22px}
+    @keyframes spin { to { transform: rotate(360deg) } }
 
-    header{display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap}
+    .wrap{
+      max-width:var(--max);
+      margin:56px auto;
+      padding:0 22px;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
     .brand{display:flex; gap:14px; align-items:center}
-    .avatar{width:56px; height:56px; border-radius:50%;
+
+    .avatar{
+      width:56px; height:56px; border-radius:50%;
       background: conic-gradient(from 210deg, var(--grad1), var(--grad2), var(--grad3));
-      display:grid; place-items:center; color:#0b1220; font-weight:900; letter-spacing:.5px;
-      box-shadow: 0 12px 36px rgba(125,211,252,.35);}
-    h1{margin:0; font-size:30px}
+      display:grid; place-items:center;
+      color:#0b1220; font-weight:900;
+      box-shadow:0 12px 36px rgba(125,211,252,.35);
+    }
+
+    h1{margin:0;font-size:30px}
     .sub{color:var(--muted); margin-top:4px}
 
     .actions{display:flex; gap:10px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px;
-      font-weight:700; border:1px solid #3b4457; text-decoration:none; color:var(--text);
+
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:12px 16px; border-radius:14px;
+      font-weight:700; border:1px solid #3b4457;
+      text-decoration:none; color:var(--text);
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
-      box-shadow: var(--shadow); transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease;
-      backdrop-filter: blur(6px);}
-    .btn:hover{ transform: translateY(-2px) }
-    .btn.primary{ background: linear-gradient(135deg, rgba(125,211,252,.25), rgba(167,139,250,.18)); border-color:#6b7aa0; color:#081019;}
-    .btn.primary span{background:#e7f7ff; padding:2px 8px; border-radius:999px; font-weight:800}
+      box-shadow: var(--shadow);
+      transition:.15s ease;
+    }
 
-    h2{margin:28px 0 12px; font-size:20px; color:#d5deed; letter-spacing:.3px}
-    .info{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 8px; color:var(--muted); font-size:14px}
-    .chip{border:1px solid var(--border); border-radius:999px; padding:7px 12px;
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); backdrop-filter: blur(4px);}
+    .btn:hover{ transform:translateY(-2px) }
 
-    .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap:20px; margin-top:12px}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(125,211,252,.25), rgba(167,139,250,.18));
+      border-color:#6b7aa0;
+      color:#081019;
+    }
+
+    h2{margin:28px 0 12px; font-size:20px; color:#d5deed}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap:20px;
+      margin-top:12px;
+    }
+
     .card{
-      position:relative; background: var(--card); border:1px solid var(--border);
-      border-radius: var(--radius); padding:18px; box-shadow: var(--shadow);
-      transition: transform .18s ease, border-color .2s ease, background .2s ease;
+      position:relative;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      transition:.18s ease;
       overflow:hidden;
     }
-    .card::after{
-      content:""; position:absolute; inset:-40%; pointer-events:none; opacity:0; transition:opacity .25s ease;
-      background:
-        radial-gradient(40% 35% at 30% 20%, rgba(125,211,252,.18), transparent 60%),
-        radial-gradient(45% 35% at 70% 80%, rgba(167,139,250,.22), transparent 60%);
-      filter: blur(30px);
-    }
-    .card:hover{ transform: translateY(-4px) }
-    .card:hover::after{ opacity:1 }
-    .card h3{margin:0 0 6px 0; font-size:18px}
+
+    .card:hover{ transform:translateY(-4px) }
+
+    .card h3{margin:0 0 6px 0}
     .card p{margin:0 0 12px 0; color:var(--muted)}
 
     .links a{
-      position:relative; margin-right:14px; font-weight:700;
+      position:relative;
+      font-weight:700;
       background:linear-gradient(90deg, var(--grad1), var(--grad2));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-decoration:none;
     }
+
     .links a::after{
-      content:""; position:absolute; left:0; bottom:-3px; height:2px; width:100%;
+      content:"";
+      position:absolute;
+      left:0; bottom:-3px;
+      height:2px; width:100%;
       background:linear-gradient(90deg, var(--grad1), var(--grad2));
-      transform: scaleX(0); transform-origin:left; transition: transform .25s ease;
-    }
-    .links a:hover::after{ transform: scaleX(1) }
-
-    footer{margin:36px 0 10px; color:var(--muted); font-size:14px; text-align:center}
-
-    @media (max-width:520px){
-      h1{font-size:26px} .avatar{width:52px;height:52px}
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:.25s ease;
     }
 
-    .plain-link {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-.plain-link:hover {
-  color: var(--accent);
-}
+    .links a:hover::after{ transform:scaleX(1) }
+
+    footer{
+      margin:36px 0 10px;
+      color:var(--muted);
+      font-size:14px;
+      text-align:center;
+    }
   </style>
 </head>
+
 <body>
   <div class="halo"></div>
 
@@ -122,31 +163,28 @@
           <div class="sub">Computer Science @ Penn State</div>
         </div>
       </div>
+
       <div class="actions">
-        <a class="btn primary" href="./resume.pdf" download>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 16l-4-4h3V4h2v8h3l-4 4zM5 20h14v-2H5v2z"/></svg>
-          <span>Resume</span>
-        </a>
+        <a class="btn primary" href="./resume.pdf" download>Resume</a>
         <a class="btn" href="mailto:jba5853@psu.edu">Contact</a>
       </div>
     </header>
 
-    <!-- Projects -->
     <h2>Selected Projects</h2>
     <div class="grid">
       <div class="card">
         <h3>Portfolio Optimization (MVO & Monte Carlo)</h3>
-        <p>Interactive portfolio optimization tools implementing Mean-Variance optimization and Monte Carlo simulation for risk-return trade-off exploration.</p>
+        <p>Mean-Variance optimization and Monte Carlo simulation tools.</p>
         <div class="links">
-          <a href="https://github.com/jba5853/Portfolio-Optimization">GitHub</a>
+          <a href="https://github.com/jba5853/Portfolio-Optimization" target="_blank">GitHub</a>
         </div>
       </div>
 
       <div class="card">
         <h3>SP500 Stock Price Prediction</h3>
-        <p>Time-series forecasting on the S&P 500 index using a Streamlit interface to explore models and prediction horizons visually.</p>
+        <p>Time-series forecasting on the S&P 500 using Streamlit.</p>
         <div class="links">
-          <a href="https://github.com/jba5853/sp500-prediction">GitHub</a>
+          <a href="https://github.com/jba5853/sp500-prediction" target="_blank">GitHub</a>
         </div>
       </div>
     </div>
@@ -155,10 +193,8 @@
       <div class="card">
         <h3>Land &amp; Legacy: Rockspring’s Farming Families</h3>
         <p>
-          Interactive ArcGIS StoryMap created for the Pasto Agricultural Museum at Penn State,
-          documenting the history of farms in the Rockspring area. Highlights generational land
-          ownership, transitions, and family narratives shaping the region’s agricultural legacy.
-          This project is ongoing based on historical findings.
+          ArcGIS StoryMap created for the Pasto Agricultural Museum at Penn State,
+          documenting generational land ownership in Rockspring.
         </p>
         <div class="links">
           <a
@@ -172,43 +208,13 @@
       </div>
     </div>
 
-    
-    <!-- Research -->
-    <h2>Research</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>SignSidecar (Zoom Sign-Language Helper)</h3>
-        <p>Research-driven prototype exploring computer vision and accessibility in human-computer interaction. Designed to detect and translate hand/finger gestures for sign communication during live video calls, with a focus on improving detection accuracy and real-time performance.</p>
-        <div class="links">
-          <a href="https://github.com/jba5853/SignSidecar">GitHub</a>
-        </div>
-      </div>
+    <footer>
+      © <span id="y"></span> Jia Arora
+    </footer>
+  </div>
 
-      <div class="card">
-        <h3>Fund Selection via ML Ranking (in progress)</h3>
-        <p>Developing a supervised ranking model to identify top-performing investment funds based on historical risk and return data. Designed for Penn State’s Investments Office pipeline.</p>
-      </div>
-
-      <div class="card">
-        <h3>3D Imaging for Livestock Weight Estimation (in progress)</h3>
-        <p>Research under Dr. Enrico Casella(casella@psu.edu) for the Institute for Computational & Data Sciences and the Department of Animal Sciences. Using 3D imaging and Meta Smart glasses to estimate calf body weights, combining camera-based depth cues with annotated data to evaluate prediction accuracy against ground-truth scales.</p>
-      </div>
-    </div>
-
-    <!-- Links -->
-    <h2>Links</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Profiles</h3>
-        <p><a class="plain-link" href="https://www.linkedin.com/in/arorajia/" target="_blank">LinkedIn</a></p>
-      </div>
-      <div class="card">
-        <h3>Get in touch</h3>
-        <p><a class="plain-link" href="mailto:youremail@psu.edu">jba5853@psu.edu</a></p>
-      </div>
-    </div>
-
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
